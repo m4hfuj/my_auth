@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- {{ form.as_p }} -->
+
+<div class="container">
+
+  <form method="post" class="form">
+    {% csrf_token %}
+    <h2>Sign up</h2>
+    <hr>
+
+    <!-- First Name, Last Name input -->
+    <div class="form-outline mb-4 row">
+      <div class="col">
+        <label class="form-label" for="first_name"> First Name: </label>
+        {{ form.first_name }}
+      </div>
+      <div class="col">
+        <label class="form-label" for="last_name"> Last Name: </label>
+        {{ form.last_name }}
+      </div>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="email"> Email: </label>
+      {{ form.email }}
+    </div>
+
+    <!-- Username input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example1"> Username: </label>
+      {{ form.username }}
+      <!-- <br> Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. -->
+    </div>
+  
+    <!-- Password1 input -->
+    <div class="form-outline mb-4">
+      <!-- <input type="password" id="form2Example2" class="form-control" /> -->
+      <label class="form-label" for="form2Example2"> Password: </label>
+      {{ form.password1 }}
+      <br>
+      <ul>
+        <!-- <li> Your password can’t be too similar to your other personal information. <br> </li> -->
+        <li> Your password must contain at least 8 characters. <br> </li>
+        <!-- <li> Your password can’t be a commonly used password. <br> </li> -->
+        <li> Your password can't be entirely numeric. <br> </li>
+      </ul>
+    </div>
+
+    <!-- Password2 input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example2"> Password Confirmation: </label>
+      {{ form.password2 }}
+    </div>
+
+    
+    <!-- Submit button -->
+    <button type="submit" class="submit btn btn-primary btn-block mb-4"> Sign up </button>
+
+    <div class="text-center">
+      <p> Already a member? <a href="{% url 'login' %}"> Log in </a></p>
+    </div>
+  </form>
+
+</div>
+
+<style>
+  .container{
+    display: flex;
+    justify-content: center;
+  }
+  .form{
+    /* background: yellow; */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 50px 100px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    /* box-shadow: 0px 0px 10px black; */
+  }
+  .submit{
+    width: 100%;
+  }
+</style>
+
+{% endblock %}

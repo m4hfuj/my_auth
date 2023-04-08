@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="container">
+  
+  <form method="POST" class="form">
+    {% csrf_token %}
+
+    <h2> Login </h2>
+    <hr>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <!-- <input type="email" id="form2Example1" class="form-control" /> -->
+      <label class="form-label" for="form2Example1"> Username: </label>
+      {{ form.username }}
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <!-- <input type="password" id="form2Example2" class="form-control" /> -->
+      <label class="form-label" for="form2Example2"> Password: </label>
+      {{ form.password }}
+    </div>
+  
+    <!-- Checkbox -->
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+      <label class="form-check-label" for="form2Example31"> Remember me </label>
+    </div>
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        
+      </div>
+  
+      <!-- <div class="col">
+        <a href="{% url 'password_reset' %}"> Forgot password? </a>
+      </div> -->
+    </div>
+  
+    <!-- Submit button -->
+    <button type="submit" class="submit btn btn-primary btn-block mb-4"> Log in </button>
+    <!-- <button type="submit"> Login </button> -->
+  
+    <!-- Register buttons -->
+    <div class="text-center">
+      <p> Not a member? <a href="{% url 'signup' %}"> Sign up </a></p>
+
+    </div>
+  </form>
+
+</div>
+
+
+<style>
+  .container{
+    display: flex;
+    justify-content: center;
+  }
+  .form{
+    /* background: yellow; */
+    margin-top: 30px;
+    padding: 50px 100px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    /* box-shadow: 0px 0px 10px black; */
+  }
+  .submit{
+    width: 100%;
+  }
+</style>
+
+{% endblock %}
