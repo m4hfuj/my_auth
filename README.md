@@ -33,4 +33,4 @@ Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for mor
 
 This project is licensed under the [MIT License](LICENSE).
 
-(c) 2023 My Awesome Project. All rights reserved.
+Copyright © 2023 Mahfuj. All rights reserved.
