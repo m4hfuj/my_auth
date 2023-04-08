@@ -1,5 +1,4 @@
 asgiref==3.6.0
-certifi @ file:///croot/certifi_1671487769961/work/certifi
 Django==4.1.7
 django-bootstrap5==22.2
 django-crispy-forms==2.0
